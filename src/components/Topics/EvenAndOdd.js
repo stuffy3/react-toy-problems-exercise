@@ -16,7 +16,7 @@ export default class EvenAndOdd extends Component {
     }
 
     pushEvenOrOdd(userInput) {
-        var arr = userInput.split('');
+        var arr = userInput.split(',');
         var even =[];
         var odd = [];
 
@@ -36,7 +36,7 @@ export default class EvenAndOdd extends Component {
         return (
             <div className="puzzleBox evenAndOddPB">
                 <h4>Evens And Odds </h4>
-                <input className="inputLine" onChange ={ (e) => this.handleChange(e.target.value) }></input>
+                <input className="inputLine" onChange={ (e) => this.handleChange(e.target.value) }></input>
                 <button className="confirmationButton" onClick={ () => {this.pushEvenOrOdd(this.state.userInput)}}>Split</button>
                 <span className="resultsBox">Even: {JSON.stringify(this.state.evenArray)}</span>
                 <span className="resultsBox">Odd: {JSON.stringify(this.state.oddArray)}</span>
